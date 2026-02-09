@@ -51,14 +51,16 @@ const Contact = () => {
       message: ""
     });
   };
-  const info = [{
+  const info: { icon: typeof Phone; label: string; value: string; href?: string }[] = [{
     icon: Phone,
     label: "Telefoon",
-    value: "+32 123 45 67 89"
+    value: "+32 123 45 67 89",
+    href: "tel:+3212345678"
   }, {
     icon: Mail,
     label: "E-mail",
-    value: "info@jc-motorhomes.be"
+    value: "info@jc-motorhomes.be",
+    href: "mailto:info@jc-motorhomes.be"
   }, {
     icon: MapPin,
     label: "Locatie",
@@ -130,7 +132,13 @@ const Contact = () => {
               </div>
               <div>
                 
-                <p className="whitespace-pre-line font-body text-sm text-muted-foreground">{item.value}</p>
+               {item.href ? (
+                  <a href={item.href} className="whitespace-pre-line font-body text-sm text-muted-foreground hover:text-primary transition-colors">
+                    {item.value}
+                  </a>
+                ) : (
+                  <p className="whitespace-pre-line font-body text-sm text-muted-foreground">{item.value}</p>
+                )}
               </div>
             </div>)}
         </div>
