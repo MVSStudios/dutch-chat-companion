@@ -44,6 +44,45 @@ export type Database = {
         }
         Relationships: []
       }
+      montage_appointments: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string | null
+          motorhome_info: string | null
+          name: string
+          phone: string | null
+          preferred_date: string | null
+          preferred_time: string | null
+          service_type: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message?: string | null
+          motorhome_info?: string | null
+          name: string
+          phone?: string | null
+          preferred_date?: string | null
+          preferred_time?: string | null
+          service_type: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string | null
+          motorhome_info?: string | null
+          name?: string
+          phone?: string | null
+          preferred_date?: string | null
+          preferred_time?: string | null
+          service_type?: string
+        }
+        Relationships: []
+      }
       motorhomes: {
         Row: {
           brand: string | null
@@ -101,6 +140,57 @@ export type Database = {
         }
         Relationships: []
       }
+      purchase_requests: {
+        Row: {
+          brand: string
+          created_at: string
+          description: string | null
+          email: string
+          fuel_type: string | null
+          id: string
+          length_m: number | null
+          message: string | null
+          mileage: number | null
+          model: string
+          name: string
+          phone: string | null
+          sleeps: number | null
+          year: number
+        }
+        Insert: {
+          brand: string
+          created_at?: string
+          description?: string | null
+          email: string
+          fuel_type?: string | null
+          id?: string
+          length_m?: number | null
+          message?: string | null
+          mileage?: number | null
+          model: string
+          name: string
+          phone?: string | null
+          sleeps?: number | null
+          year: number
+        }
+        Update: {
+          brand?: string
+          created_at?: string
+          description?: string | null
+          email?: string
+          fuel_type?: string | null
+          id?: string
+          length_m?: number | null
+          message?: string | null
+          mileage?: number | null
+          model?: string
+          name?: string
+          phone?: string | null
+          sleeps?: number | null
+          year?: number
+        }
+        Relationships: []
+      }
       quote_requests: {
         Row: {
           created_at: string
@@ -138,6 +228,39 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      seo_settings: {
+        Row: {
+          id: string
+          meta_description: string | null
+          og_description: string | null
+          og_image: string | null
+          og_title: string | null
+          page_slug: string
+          page_title: string | null
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          meta_description?: string | null
+          og_description?: string | null
+          og_image?: string | null
+          og_title?: string | null
+          page_slug: string
+          page_title?: string | null
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          meta_description?: string | null
+          og_description?: string | null
+          og_image?: string | null
+          og_title?: string | null
+          page_slug?: string
+          page_title?: string | null
+          updated_at?: string
+        }
+        Relationships: []
       }
     }
     Views: {
