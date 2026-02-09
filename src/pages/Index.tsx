@@ -82,9 +82,7 @@ const Index = () => {
       {/* Featured */}
       {motorhomes && motorhomes.length > 0 && <section className="bg-muted py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-center font-heading text-3xl font-bold text-foreground md:text-4xl">
-              Uitgelicht aanbod
-            </h2>
+            <h2 className="text-center font-heading text-3xl font-bold text-foreground md:text-4xl">Ons aanbod</h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {motorhomes.map(m => <MotorhomeCard key={m.id} {...m} />)}
             </div>
