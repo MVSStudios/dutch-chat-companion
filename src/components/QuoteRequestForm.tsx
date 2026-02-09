@@ -14,10 +14,7 @@ interface QuoteRequestFormProps {
 const QuoteRequestForm = ({ motorhomeId, motorhomeTitle }: QuoteRequestFormProps) => {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+    name: "", email: "", phone: "", message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -32,68 +29,44 @@ const QuoteRequestForm = ({ motorhomeId, motorhomeTitle }: QuoteRequestFormProps
       message: formData.message || null,
     });
 
-    setLoading(false);
+    if (!error) {
+      supabase.functions.invoke("send-notification-email", {
+        body: {
+          type: "quote",
+          data: { ...formData, motorhome: motorhomeTitle },
+        },
+      });
+    }
 
+    setLoading(false);
     if (error) {
       toast.error("Er ging iets mis. Probeer het opnieuw.");
       return;
     }
-
     toast.success("Uw offerte-aanvraag is verstuurd!");
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <h3 className="font-heading text-xl font-semibold text-foreground">
-        Offerte aanvragen
-      </h3>
-      <p className="font-body text-sm text-muted-foreground">
-        Voor: <strong>{motorhomeTitle}</strong>
-      </p>
-
+      <h3 className="font-heading text-xl font-semibold text-foreground">Offerte aanvragen</h3>
+      <p className="font-body text-sm text-muted-foreground">Voor: <strong>{motorhomeTitle}</strong></p>
       <div className="space-y-2">
         <Label htmlFor="name">Naam *</Label>
-        <Input
-          id="name"
-          required
-          value={formData.name}
-          onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-        />
+        <Input id="name" required value={formData.name} onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))} />
       </div>
-
       <div className="space-y-2">
         <Label htmlFor="email">E-mail *</Label>
-        <Input
-          id="email"
-          type="email"
-          required
-          value={formData.email}
-          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-        />
+        <Input id="email" type="email" required value={formData.email} onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))} />
       </div>
-
       <div className="space-y-2">
         <Label htmlFor="phone">Telefoon</Label>
-        <Input
-          id="phone"
-          type="tel"
-          value={formData.phone}
-          onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-        />
+        <Input id="phone" type="tel" value={formData.phone} onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))} />
       </div>
-
       <div className="space-y-2">
         <Label htmlFor="message">Bericht</Label>
-        <Textarea
-          id="message"
-          rows={4}
-          placeholder="Stel uw vragen of vertel ons wat u zoekt..."
-          value={formData.message}
-          onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-        />
+        <Textarea id="message" rows={4} placeholder="Stel uw vragen of vertel ons wat u zoekt..." value={formData.message} onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))} />
       </div>
-
       <Button type="submit" className="w-full" disabled={loading}>
         {loading ? "Versturen..." : "Offerte aanvragen"}
       </Button>

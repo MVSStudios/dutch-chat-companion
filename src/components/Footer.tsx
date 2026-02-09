@@ -19,6 +19,8 @@ const Footer = () => {
             <div className="mt-3 flex flex-col gap-2">
               <Link to="/" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Home</Link>
               <Link to="/motorhomes" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Aanbod</Link>
+              <Link to="/aankoop" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Aankoop</Link>
+              <Link to="/montage" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Montage</Link>
               <Link to="/diensten" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Diensten</Link>
               <Link to="/contact" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Contact</Link>
             </div>
@@ -33,7 +35,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 text-sm opacity-80">
                 <Mail className="h-4 w-4 shrink-0" />
-                <span>info@jcmotorhomes.be</span>
+                <span>info@jc-motorhomes.be</span>
               </div>
               <div className="flex items-center gap-2 text-sm opacity-80">
                 <MapPin className="h-4 w-4 shrink-0" />
