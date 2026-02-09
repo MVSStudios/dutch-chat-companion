@@ -54,8 +54,8 @@ const Contact = () => {
   const info: { icon: typeof Phone; label: string; value: string; href?: string }[] = [{
     icon: Phone,
     label: "Telefoon",
-    value: "+32 123 45 67 89",
-    href: "tel:+3212345678"
+    value: "+32 468 33 14 80",
+    href: "tel:+32468331480"
   }, {
     icon: Mail,
     label: "E-mail",
