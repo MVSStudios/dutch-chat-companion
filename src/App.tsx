@@ -9,6 +9,8 @@ import Motorhomes from "./pages/Motorhomes";
 import MotorhomeDetail from "./pages/MotorhomeDetail";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import Purchase from "./pages/Purchase";
+import Montage from "./pages/Montage";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
@@ -27,6 +29,8 @@ const App = () => (
             <Route path="/motorhomes" element={<Motorhomes />} />
             <Route path="/motorhomes/:id" element={<MotorhomeDetail />} />
             <Route path="/diensten" element={<Services />} />
+            <Route path="/aankoop" element={<Purchase />} />
+            <Route path="/montage" element={<Montage />} />
             <Route path="/contact" element={<Contact />} />
           </Route>
           <Route path="/admin/login" element={<AdminLogin />} />
