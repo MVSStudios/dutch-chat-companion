@@ -144,49 +144,70 @@ export type Database = {
         Row: {
           brand: string
           created_at: string
+          damage: string | null
           description: string | null
           email: string
+          first_registration: string | null
           fuel_type: string | null
+          horsepower: number | null
           id: string
+          immediately_available: string | null
           length_m: number | null
           message: string | null
           mileage: number | null
           model: string
+          motor: string | null
           name: string
+          options: string | null
           phone: string | null
           sleeps: number | null
+          transmission: string | null
           year: number
         }
         Insert: {
           brand: string
           created_at?: string
+          damage?: string | null
           description?: string | null
           email: string
+          first_registration?: string | null
           fuel_type?: string | null
+          horsepower?: number | null
           id?: string
+          immediately_available?: string | null
           length_m?: number | null
           message?: string | null
           mileage?: number | null
           model: string
+          motor?: string | null
           name: string
+          options?: string | null
           phone?: string | null
           sleeps?: number | null
+          transmission?: string | null
           year: number
         }
         Update: {
           brand?: string
           created_at?: string
+          damage?: string | null
           description?: string | null
           email?: string
+          first_registration?: string | null
           fuel_type?: string | null
+          horsepower?: number | null
           id?: string
+          immediately_available?: string | null
           length_m?: number | null
           message?: string | null
           mileage?: number | null
           model?: string
+          motor?: string | null
           name?: string
+          options?: string | null
           phone?: string | null
           sleeps?: number | null
+          transmission?: string | null
           year?: number
         }
         Relationships: []
