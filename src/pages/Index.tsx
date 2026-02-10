@@ -38,7 +38,7 @@ const Index = () => {
       {/* Hero */}
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
         <img src={heroImage} alt="Motorhome in landschap" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 rounded-none shadow-none bg-[sidebar-accent-foreground] bg-[#ab8430]/[0.36]" style={{
+        <div className="absolute inset-0 rounded-none shadow-none bg-[sidebar-accent-foreground] bg-[#ab8530]/[0.36]" style={{
         background: "var(--gradient-hero)"
       }} />
         <div className="relative z-10 container mx-auto px-4 py-20 text-center">
