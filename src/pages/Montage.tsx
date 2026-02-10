@@ -19,17 +19,11 @@ const serviceTypes = [
   "Overig",
 ];
 
-const timeSlots = [
-  "Voormiddag (9:00 - 12:00)",
-  "Namiddag (13:00 - 17:00)",
-  "Volledige dag",
-];
 
 const Montage = () => {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "", email: "", phone: "", service_type: "",
-    preferred_date: "", preferred_time: "",
     motorhome_info: "", message: "",
   });
 
@@ -40,10 +34,8 @@ const Montage = () => {
     const { error } = await supabase.from("montage_appointments").insert({
       name: form.name,
       email: form.email,
-      phone: form.phone || null,
+      phone: form.phone,
       service_type: form.service_type,
-      preferred_date: form.preferred_date || null,
-      preferred_time: form.preferred_time || null,
       motorhome_info: form.motorhome_info || null,
       message: form.message || null,
     });
@@ -60,11 +52,8 @@ const Montage = () => {
       return;
     }
     toast.success("Uw afspraak is aangevraagd! Wij bevestigen zo snel mogelijk.");
-    setForm({ name: "", email: "", phone: "", service_type: "", preferred_date: "", preferred_time: "", motorhome_info: "", message: "" });
+    setForm({ name: "", email: "", phone: "", service_type: "", motorhome_info: "", message: "" });
   };
-
-  // Min date = today
-  const today = new Date().toISOString().split("T")[0];
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -97,8 +86,8 @@ const Montage = () => {
               </div>
             </div>
             <div className="space-y-2">
-              <Label>Telefoon</Label>
-              <Input type="tel" value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} />
+              <Label>Telefoon *</Label>
+              <Input type="tel" required value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} />
             </div>
 
             <h2 className="font-heading text-xl font-semibold text-foreground pt-4">Afspraak details</h2>
@@ -110,21 +99,6 @@ const Montage = () => {
                   {serviceTypes.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}
                 </SelectContent>
               </Select>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="space-y-2">
-                <Label>Voorkeursdatum</Label>
-                <Input type="date" min={today} value={form.preferred_date} onChange={e => setForm(p => ({ ...p, preferred_date: e.target.value }))} />
-              </div>
-              <div className="space-y-2">
-                <Label>Voorkeurstijd</Label>
-                <Select value={form.preferred_time} onValueChange={v => setForm(p => ({ ...p, preferred_time: v }))}>
-                  <SelectTrigger><SelectValue placeholder="Kies..." /></SelectTrigger>
-                  <SelectContent>
-                    {timeSlots.map(t => <SelectItem key={t} value={t}>{t}</SelectItem>)}
-                  </SelectContent>
-                </Select>
-              </div>
             </div>
             <div className="space-y-2">
               <Label>Info over uw motorhome</Label>

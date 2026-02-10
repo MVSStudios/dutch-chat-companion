@@ -11,7 +11,7 @@ const Navbar = () => {
     { to: "/motorhomes", label: "Aanbod" },
     { to: "/aankoop", label: "Aankoop" },
     { to: "/montage", label: "Montage" },
-    { to: "/diensten", label: "Diensten" },
+    
     { to: "/contact", label: "Contact" },
   ];
   const isActive = (path: string) => location.pathname === path;

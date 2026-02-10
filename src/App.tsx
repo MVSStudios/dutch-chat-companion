@@ -7,7 +7,7 @@ import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import Motorhomes from "./pages/Motorhomes";
 import MotorhomeDetail from "./pages/MotorhomeDetail";
-import Services from "./pages/Services";
+
 import Contact from "./pages/Contact";
 import Purchase from "./pages/Purchase";
 import Montage from "./pages/Montage";
@@ -28,7 +28,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/motorhomes" element={<Motorhomes />} />
             <Route path="/motorhomes/:id" element={<MotorhomeDetail />} />
-            <Route path="/diensten" element={<Services />} />
+            
             <Route path="/aankoop" element={<Purchase />} />
             <Route path="/montage" element={<Montage />} />
             <Route path="/contact" element={<Contact />} />

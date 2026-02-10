@@ -9,45 +9,46 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { TrendingUp, CheckCircle } from "lucide-react";
 
-const currentYear = new Date().getFullYear();
-
 const Purchase = () => {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "", email: "", phone: "", brand: "", model: "",
-    year: "", mileage: "", fuel_type: "", length_m: "",
-    sleeps: "", description: "", message: "",
+    motor: "", transmission: "", mileage: "",
+    first_registration: "", horsepower: "",
+    fuel_type: "", length_m: "", sleeps: "",
+    options: "", damage: "", immediately_available: "",
+    description: "", message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    const yearNum = Number(form.year);
-    if (yearNum < 2000 || yearNum > currentYear) {
-      toast.error(`Bouwjaar moet tussen 2000 en ${currentYear} liggen.`);
-      return;
-    }
-
     setLoading(true);
+
     const { error } = await supabase.from("purchase_requests").insert({
       name: form.name,
       email: form.email,
       phone: form.phone || null,
       brand: form.brand,
       model: form.model,
-      year: yearNum,
+      year: new Date().getFullYear(),
+      motor: form.motor || null,
+      transmission: form.transmission || null,
       mileage: form.mileage ? Number(form.mileage) : null,
+      first_registration: form.first_registration || null,
+      horsepower: form.horsepower ? Number(form.horsepower) : null,
       fuel_type: form.fuel_type || null,
       length_m: form.length_m ? Number(form.length_m) : null,
       sleeps: form.sleeps ? Number(form.sleeps) : null,
+      options: form.options || null,
+      damage: form.damage || null,
+      immediately_available: form.immediately_available || null,
       description: form.description || null,
       message: form.message || null,
     });
 
     if (!error) {
-      // Send email notification (fire-and-forget)
       supabase.functions.invoke("send-notification-email", {
-        body: { type: "purchase", data: { ...form, year: form.year, mileage: form.mileage } },
+        body: { type: "purchase", data: form },
       });
     }
 
@@ -57,7 +58,7 @@ const Purchase = () => {
       return;
     }
     toast.success("Uw aanvraag is verstuurd! Wij nemen zo snel mogelijk contact op.");
-    setForm({ name: "", email: "", phone: "", brand: "", model: "", year: "", mileage: "", fuel_type: "", length_m: "", sleeps: "", description: "", message: "" });
+    setForm({ name: "", email: "", phone: "", brand: "", model: "", motor: "", transmission: "", mileage: "", first_registration: "", horsepower: "", fuel_type: "", length_m: "", sleeps: "", options: "", damage: "", immediately_available: "", description: "", message: "" });
   };
 
   return (
@@ -108,15 +109,35 @@ const Purchase = () => {
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
-                <Label>Bouwjaar * (min. 2000)</Label>
-                <Input type="number" required min={2000} max={currentYear} value={form.year} onChange={e => setForm(p => ({ ...p, year: e.target.value }))} />
+                <Label>Motor</Label>
+                <Input placeholder="Bv. 2.3 MultiJet" value={form.motor} onChange={e => setForm(p => ({ ...p, motor: e.target.value }))} />
               </div>
+              <div className="space-y-2">
+                <Label>Transmissie *</Label>
+                <Select required value={form.transmission} onValueChange={v => setForm(p => ({ ...p, transmission: v }))}>
+                  <SelectTrigger><SelectValue placeholder="Kies..." /></SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="automaat">Automaat</SelectItem>
+                    <SelectItem value="manueel">Manueel</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label>Kilometerstand</Label>
                 <Input type="number" value={form.mileage} onChange={e => setForm(p => ({ ...p, mileage: e.target.value }))} />
               </div>
+              <div className="space-y-2">
+                <Label>1ste inschrijving</Label>
+                <Input type="date" value={form.first_registration} onChange={e => setForm(p => ({ ...p, first_registration: e.target.value }))} />
+              </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
+              <div className="space-y-2">
+                <Label>Hoeveel PK</Label>
+                <Input type="number" value={form.horsepower} onChange={e => setForm(p => ({ ...p, horsepower: e.target.value }))} />
+              </div>
               <div className="space-y-2">
                 <Label>Brandstof</Label>
                 <Select value={form.fuel_type} onValueChange={v => setForm(p => ({ ...p, fuel_type: v }))}>
@@ -130,13 +151,33 @@ const Purchase = () => {
                 </Select>
               </div>
               <div className="space-y-2">
+                <Label>Slaapplaatsen</Label>
+                <Input type="number" value={form.sleeps} onChange={e => setForm(p => ({ ...p, sleeps: e.target.value }))} />
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="space-y-2">
                 <Label>Lengte (m)</Label>
                 <Input type="number" step="0.1" value={form.length_m} onChange={e => setForm(p => ({ ...p, length_m: e.target.value }))} />
               </div>
               <div className="space-y-2">
-                <Label>Slaapplaatsen</Label>
-                <Input type="number" value={form.sleeps} onChange={e => setForm(p => ({ ...p, sleeps: e.target.value }))} />
+                <Label>Onmiddellijk leverbaar *</Label>
+                <Select required value={form.immediately_available} onValueChange={v => setForm(p => ({ ...p, immediately_available: v }))}>
+                  <SelectTrigger><SelectValue placeholder="Kies..." /></SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="ja">Ja</SelectItem>
+                    <SelectItem value="nee">Nee</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
+            </div>
+            <div className="space-y-2">
+              <Label>Eventuele opties</Label>
+              <Textarea rows={2} placeholder="Bv. cruise control, camera, zonnepanelen..." value={form.options} onChange={e => setForm(p => ({ ...p, options: e.target.value }))} />
+            </div>
+            <div className="space-y-2">
+              <Label>Schade</Label>
+              <Textarea rows={2} placeholder="Beschrijf eventuele schade..." value={form.damage} onChange={e => setForm(p => ({ ...p, damage: e.target.value }))} />
             </div>
             <div className="space-y-2">
               <Label>Beschrijving van de camper</Label>
