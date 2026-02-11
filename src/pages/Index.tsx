@@ -164,7 +164,7 @@ const Index = () => {
             <div className="overflow-hidden rounded-xl border border-border">
               <iframe
                 title="Locatie J&C Motorhomes"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.5!2d5.17!3d50.93!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zIndustraWV3ZWcgNCwgMzU0MCBIZXJrLWRlLVN0YWQ!5e0!3m2!1snl!2sbe!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2516.5!2d3.48!3d50.82!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3b8d8c3a1c3a1%3A0x0!2sBissegemsestraat%2043%2F003%2C%208501%20Bissegem!5e0!3m2!1snl!2sbe!4v1234567890"
                 width="100%"
                 height="350"
                 style={{ border: 0 }}
