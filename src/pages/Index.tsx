@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import MotorhomeCard from "@/components/MotorhomeCard";
 import heroImage from "@/assets/hero-motorhome.jpg";
 import aboutImage from "@/assets/about-team.png";
+import waaromImage from "@/assets/waarom-jc.png";
 
 const services = [{
   icon: TrendingUp,
@@ -132,6 +133,26 @@ const Index = () => {
             </div>
             <div className="overflow-hidden rounded-xl">
               <img src={aboutImage} alt="Team J&C Motorhomes" className="h-auto w-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Waarom J&C? */}
+      <section className="bg-muted py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="overflow-hidden rounded-xl">
+              <img src={waaromImage} alt="Waarom J&C Motorhomes" className="h-auto w-full object-cover" />
+            </div>
+            <div>
+              <h2 className="font-heading text-3xl font-bold text-foreground md:text-4xl">Waarom J&C?</h2>
+              <p className="mt-4 font-body leading-relaxed text-muted-foreground">
+                Wij stellen vast dat de motorhome wereld in België een overaanbod aan grote dealers heeft. De snel groeiende markt heeft ons aan den lijve doen vaststellen dat de nood aan persoonlijke opvolging, service en aanspreekpunt meer dan ooit van tel zijn. Met deze focus streven we ernaar om elke dag het beste van onszelf te geven en met onze passie jullie dromen helpen waar te maken.
+              </p>
+              <p className="mt-4 font-body leading-relaxed text-muted-foreground">
+                Onze kleinschaligheid en geografische ligging te Kortrijk zijn onze troeven die zich vertalen in jullie budgettair haalbare dromen vol leuke reisverhalen. Uw droom? Uw reis? Bij J&C motorhomes aan een betaalbare prijs.
+              </p>
             </div>
           </div>
         </div>
