@@ -29,7 +29,7 @@ const App = () => (
             <Route path="/motorhomes" element={<Motorhomes />} />
             <Route path="/motorhomes/:id" element={<MotorhomeDetail />} />
             
-            <Route path="/aankoop" element={<Purchase />} />
+            <Route path="/verkoop" element={<Purchase />} />
             <Route path="/montage" element={<Montage />} />
             <Route path="/contact" element={<Contact />} />
           </Route>

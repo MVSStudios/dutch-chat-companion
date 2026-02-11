@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="mt-3 flex flex-col gap-2">
               <Link to="/" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Home</Link>
               <Link to="/motorhomes" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Aanbod</Link>
-              <Link to="/aankoop" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Aankoop</Link>
+              <Link to="/verkoop" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Verkoop</Link>
               <Link to="/montage" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Montage</Link>
               <Link to="/diensten" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Diensten</Link>
               <Link to="/contact" className="font-body text-sm opacity-80 transition-opacity hover:opacity-100">Contact</Link>
