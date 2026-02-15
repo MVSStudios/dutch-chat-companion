@@ -145,7 +145,7 @@ const Purchase = () => {
               </div>
               <div className="space-y-2">
                 <Label>Telefoon</Label>
-                <Input type="tel" value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} />
+                <Input type="tel" required value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} />
               </div>
 
               <h3 className="font-heading text-xl font-semibold text-foreground pt-4">Camper gegevens</h3>
