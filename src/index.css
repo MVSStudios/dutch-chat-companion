@@ -6,51 +6,51 @@
 
 @layer base {
   :root {
-    --background: 40 20% 97%;
-    --foreground: 150 30% 10%;
+    --background: 150 20% 10%;
+    --foreground: 40 15% 88%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 150 30% 10%;
+    --card: 150 18% 14%;
+    --card-foreground: 40 15% 88%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 150 30% 10%;
+    --popover: 150 18% 14%;
+    --popover-foreground: 40 15% 88%;
 
-    --primary: 41 56% 43%;
-    --primary-foreground: 40 20% 97%;
+    --primary: 41 56% 48%;
+    --primary-foreground: 150 25% 8%;
 
-    --secondary: 35 30% 90%;
-    --secondary-foreground: 148 26% 18%;
+    --secondary: 150 15% 18%;
+    --secondary-foreground: 40 15% 85%;
 
-    --muted: 40 15% 93%;
-    --muted-foreground: 150 10% 45%;
+    --muted: 150 15% 15%;
+    --muted-foreground: 40 10% 55%;
 
-    --accent: 41 56% 43%;
+    --accent: 41 56% 48%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 40 15% 88%;
-    --input: 40 15% 88%;
-    --ring: 41 56% 43%;
+    --border: 150 12% 20%;
+    --input: 150 12% 20%;
+    --ring: 41 56% 48%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 150 25% 12%;
+    --sidebar-background: 150 25% 8%;
     --sidebar-foreground: 40 20% 92%;
     --sidebar-primary: 152 45% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 150 20% 18%;
+    --sidebar-accent: 150 20% 14%;
     --sidebar-accent-foreground: 40 20% 92%;
-    --sidebar-border: 150 15% 22%;
+    --sidebar-border: 150 15% 18%;
     --sidebar-ring: 152 45% 45%;
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Source Sans 3', sans-serif;
 
-    --gradient-hero: linear-gradient(135deg, hsl(41, 56%, 43%), hsl(150 30% 10% / 0.85));
-    --shadow-card: 0 4px 24px -4px hsl(150 30% 10% / 0.08);
-    --shadow-elevated: 0 12px 40px -8px hsl(150 30% 10% / 0.15);
+    --gradient-hero: linear-gradient(135deg, hsl(41, 56%, 43%), hsl(150 30% 6% / 0.88));
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.25);
+    --shadow-elevated: 0 12px 40px -8px hsl(0 0% 0% / 0.4);
   }
 
   .dark {
