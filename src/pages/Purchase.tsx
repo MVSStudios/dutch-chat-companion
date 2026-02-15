@@ -144,7 +144,7 @@ const Purchase = () => {
                 </div>
               </div>
               <div className="space-y-2">
-                <Label>Telefoon</Label>
+                <Label>Telefoon *</Label>
                 <Input type="tel" required value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} />
               </div>
 

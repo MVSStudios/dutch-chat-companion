@@ -94,15 +94,15 @@ const Contact = () => {
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="c-phone">Telefoon</Label>
-                <Input id="c-phone" type="tel" value={form.phone} onChange={e => setForm(p => ({
+                <Label htmlFor="c-phone">Telefoon *</Label>
+                <Input id="c-phone" type="tel" required value={form.phone} onChange={e => setForm(p => ({
                 ...p,
                 phone: e.target.value
               }))} />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="c-subject">Onderwerp</Label>
-                <Input id="c-subject" value={form.subject} onChange={e => setForm(p => ({
+                <Label htmlFor="c-subject">Onderwerp *</Label>
+                <Input id="c-subject" required value={form.subject} onChange={e => setForm(p => ({
                 ...p,
                 subject: e.target.value
               }))} />
