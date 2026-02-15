@@ -10,7 +10,6 @@ const Footer = () => {
             <h3 className="font-heading text-2xl font-bold">J&C Motorhomes</h3>
             <p className="mt-3 font-body text-sm opacity-80">
               Uw specialist in aankoop, verkoop, montage en advies van motorhomes.
-              Al jarenlang uw betrouwbare partner.
             </p>
           </div>
 
@@ -31,7 +30,7 @@ const Footer = () => {
             <div className="mt-3 flex flex-col gap-3">
               <div className="flex items-center gap-2 text-sm opacity-80">
                 <Phone className="h-4 w-4 shrink-0" />
-                <span>+32 123 45 67 89</span>
+                <span>+32 468 33 14 80</span>
               </div>
               <div className="flex items-center gap-2 text-sm opacity-80">
                 <Mail className="h-4 w-4 shrink-0" />

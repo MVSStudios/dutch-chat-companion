@@ -9,7 +9,7 @@ const Navbar = () => {
   const links = [
     { to: "/", label: "Home" },
     { to: "/motorhomes", label: "Aanbod" },
-    { to: "/verkoop", label: "Verkoop" },
+    { to: "/verkoop", label: "Mijn motorhome verkopen" },
     { to: "/montage", label: "Montage" },
     
     { to: "/contact", label: "Contact" },

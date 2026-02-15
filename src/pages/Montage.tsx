@@ -128,7 +128,7 @@ const Montage = () => {
           <div className="rounded-xl border border-border bg-card p-6">
             <h3 className="font-heading text-lg font-semibold text-foreground">Waarom bij ons?</h3>
             <ul className="mt-4 space-y-3">
-              {["Ervaren monteurs", "Kwaliteitsgarantie", "Scherpe prijzen", "Snelle service"].map(p => (
+              {["Ervaren monteur", "Kwaliteitsgarantie", "Scherpe prijzen", "Snelle service"].map(p => (
                 <li key={p} className="flex items-center gap-2 font-body text-sm text-foreground">
                   <CheckCircle className="h-4 w-4 shrink-0 text-primary" /> {p}
                 </li>
