@@ -135,6 +135,50 @@ const AdminDashboard = () => {
     },
   });
 
+  const deleteQuoteMutation = useMutation({
+    mutationFn: async (id: string) => {
+      const { error } = await supabase.from("quote_requests").delete().eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-quotes"] });
+      toast.success("Offerte verwijderd!");
+    },
+  });
+
+  const deleteMessageMutation = useMutation({
+    mutationFn: async (id: string) => {
+      const { error } = await supabase.from("contact_messages").delete().eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-messages"] });
+      toast.success("Bericht verwijderd!");
+    },
+  });
+
+  const deletePurchaseMutation = useMutation({
+    mutationFn: async (id: string) => {
+      const { error } = await supabase.from("purchase_requests").delete().eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-purchases"] });
+      toast.success("Aankoopaanvraag verwijderd!");
+    },
+  });
+
+  const deleteMontageMutation = useMutation({
+    mutationFn: async (id: string) => {
+      const { error } = await supabase.from("montage_appointments").delete().eq("id", id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-montage"] });
+      toast.success("Montage-afspraak verwijderd!");
+    },
+  });
+
   const resetForm = () => { setForm(emptyForm); setEditingId(null); setDialogOpen(false); };
 
   const openEdit = (m: Motorhome) => {
@@ -295,7 +339,12 @@ const AdminDashboard = () => {
                     {(q.motorhomes as any)?.title && <p className="mt-1 text-sm text-primary">Motorhome: {(q.motorhomes as any).title}</p>}
                     {q.message && <p className="mt-2 text-sm text-foreground">{q.message}</p>}
                   </div>
-                  <span className="text-xs text-muted-foreground">{new Date(q.created_at).toLocaleDateString("nl-BE")}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-muted-foreground">{new Date(q.created_at).toLocaleDateString("nl-BE")}</span>
+                    <Button variant="outline" size="sm" onClick={() => { if (confirm("Weet u zeker dat u deze offerte wilt verwijderen?")) deleteQuoteMutation.mutate(q.id); }}>
+                      <Trash2 className="h-4 w-4 text-destructive" />
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -316,7 +365,12 @@ const AdminDashboard = () => {
                     {msg.subject && <p className="mt-1 text-sm font-medium text-foreground">{msg.subject}</p>}
                     <p className="mt-1 text-sm text-foreground">{msg.message}</p>
                   </div>
-                  <span className="text-xs text-muted-foreground">{new Date(msg.created_at).toLocaleDateString("nl-BE")}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-muted-foreground">{new Date(msg.created_at).toLocaleDateString("nl-BE")}</span>
+                    <Button variant="outline" size="sm" onClick={() => { if (confirm("Weet u zeker dat u dit bericht wilt verwijderen?")) deleteMessageMutation.mutate(msg.id); }}>
+                      <Trash2 className="h-4 w-4 text-destructive" />
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -338,7 +392,12 @@ const AdminDashboard = () => {
                     {pr.description && <p className="mt-1 text-sm text-foreground">{pr.description}</p>}
                     {pr.message && <p className="mt-1 text-sm text-muted-foreground">{pr.message}</p>}
                   </div>
-                  <span className="text-xs text-muted-foreground">{new Date(pr.created_at).toLocaleDateString("nl-BE")}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-muted-foreground">{new Date(pr.created_at).toLocaleDateString("nl-BE")}</span>
+                    <Button variant="outline" size="sm" onClick={() => { if (confirm("Weet u zeker dat u deze aankoopaanvraag wilt verwijderen?")) deletePurchaseMutation.mutate(pr.id); }}>
+                      <Trash2 className="h-4 w-4 text-destructive" />
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -361,7 +420,12 @@ const AdminDashboard = () => {
                     {ma.motorhome_info && <p className="text-sm text-foreground">{ma.motorhome_info}</p>}
                     {ma.message && <p className="mt-1 text-sm text-foreground">{ma.message}</p>}
                   </div>
-                  <span className="text-xs text-muted-foreground">{new Date(ma.created_at).toLocaleDateString("nl-BE")}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-muted-foreground">{new Date(ma.created_at).toLocaleDateString("nl-BE")}</span>
+                    <Button variant="outline" size="sm" onClick={() => { if (confirm("Weet u zeker dat u deze montage-afspraak wilt verwijderen?")) deleteMontageMutation.mutate(ma.id); }}>
+                      <Trash2 className="h-4 w-4 text-destructive" />
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
