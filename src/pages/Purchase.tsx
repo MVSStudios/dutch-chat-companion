@@ -177,8 +177,8 @@ const Purchase = () => {
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
-                  <Label>Kilometerstand</Label>
-                  <Input type="number" value={form.mileage} onChange={e => setForm(p => ({ ...p, mileage: e.target.value }))} />
+                  <Label>Kilometerstand *</Label>
+                  <Input type="number" required value={form.mileage} onChange={e => setForm(p => ({ ...p, mileage: e.target.value }))} />
                 </div>
                 <div className="space-y-2">
                   <Label>1ste inschrijving</Label>
@@ -187,18 +187,15 @@ const Purchase = () => {
               </div>
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="space-y-2">
-                  <Label>Hoeveel PK</Label>
-                  <Input type="number" value={form.horsepower} onChange={e => setForm(p => ({ ...p, horsepower: e.target.value }))} />
+                  <Label>Hoeveel PK *</Label>
+                  <Input type="number" required value={form.horsepower} onChange={e => setForm(p => ({ ...p, horsepower: e.target.value }))} />
                 </div>
                 <div className="space-y-2">
-                  <Label>Brandstof</Label>
-                  <Select value={form.fuel_type} onValueChange={v => setForm(p => ({ ...p, fuel_type: v }))}>
+                  <Label>Brandstof *</Label>
+                  <Select required value={form.fuel_type} onValueChange={v => setForm(p => ({ ...p, fuel_type: v }))}>
                     <SelectTrigger><SelectValue placeholder="Kies..." /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="diesel">Diesel</SelectItem>
-                      <SelectItem value="benzine">Benzine</SelectItem>
-                      <SelectItem value="elektrisch">Elektrisch</SelectItem>
-                      <SelectItem value="hybride">Hybride</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
