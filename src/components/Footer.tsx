@@ -38,7 +38,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 text-sm opacity-80">
                 <MapPin className="h-4 w-4 shrink-0" />
-                <span>België</span>
+                <span>Bissegemsestraat 43/003 8501 Kortrijk, België</span>
               </div>
             </div>
           </div>
