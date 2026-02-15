@@ -60,12 +60,12 @@ const QuoteRequestForm = ({ motorhomeId, motorhomeTitle }: QuoteRequestFormProps
         <Input id="email" type="email" required value={formData.email} onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))} />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="phone">Telefoon</Label>
-        <Input id="phone" type="tel" value={formData.phone} onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))} />
+        <Label htmlFor="phone">Telefoon *</Label>
+        <Input id="phone" type="tel" required value={formData.phone} onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))} />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="message">Bericht</Label>
-        <Textarea id="message" rows={4} placeholder="Stel uw vragen of vertel ons wat u zoekt..." value={formData.message} onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))} />
+        <Label htmlFor="message">Bericht *</Label>
+        <Textarea id="message" rows={4} required placeholder="Stel uw vragen of vertel ons wat u zoekt..." value={formData.message} onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))} />
       </div>
       <Button type="submit" className="w-full" disabled={loading}>
         {loading ? "Versturen..." : "Offerte aanvragen"}
