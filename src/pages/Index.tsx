@@ -159,7 +159,7 @@ const Index = () => {
       </section>
 
       {/* Adres & Map */}
-      <section className="bg-muted py-20">
+      <section className="py-20 bg-[#1e2421]">
         <div className="container mx-auto px-4">
           <h2 className="text-center font-heading text-3xl font-bold text-foreground md:text-4xl">Waar vindt u ons?</h2>
           <div className="mt-12 grid items-start gap-8 lg:grid-cols-2">
