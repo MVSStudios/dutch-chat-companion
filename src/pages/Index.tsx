@@ -26,15 +26,15 @@ const Index = () => {
   const { data: motorhomes } = useQuery({
     queryKey: ["featured-motorhomes"],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("motorhomes")
-        .select("*")
-        .eq("status", "available")
-        .order("created_at", { ascending: false })
-        .limit(3);
+      const { data, error } = await supabase.
+      from("motorhomes").
+      select("*").
+      eq("status", "available").
+      order("created_at", { ascending: false }).
+      limit(3);
       if (error) throw error;
       return data;
-    },
+    }
   });
 
   return (
@@ -73,25 +73,25 @@ const Index = () => {
           Van aankoop tot montage — wij staan voor u klaar.
         </p>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {services.map(s => (
-            <div key={s.title} className="rounded-xl border border-border bg-card p-8 shadow-[var(--shadow-card)] transition-shadow hover:shadow-[var(--shadow-elevated)]">
+          {services.map((s) =>
+          <div key={s.title} className="rounded-xl border border-border bg-card p-8 shadow-[var(--shadow-card)] transition-shadow hover:shadow-[var(--shadow-elevated)]">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                 <s.icon className="h-6 w-6 text-primary" />
               </div>
               <h3 className="mt-5 font-heading text-xl font-semibold text-card-foreground">{s.title}</h3>
               <p className="mt-2 font-body text-sm leading-relaxed text-muted-foreground">{s.description}</p>
             </div>
-          ))}
+          )}
         </div>
       </section>
 
       {/* Featured */}
-      {motorhomes && motorhomes.length > 0 && (
-        <section className="bg-muted py-20">
+      {motorhomes && motorhomes.length > 0 &&
+      <section className="bg-muted py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-center font-heading text-3xl font-bold text-foreground md:text-4xl">Ons aanbod</h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {motorhomes.map(m => <MotorhomeCard key={m.id} {...m} />)}
+              {motorhomes.map((m) => <MotorhomeCard key={m.id} {...m} />)}
             </div>
             <div className="mt-10 text-center">
               <Button asChild variant="outline" size="lg">
@@ -103,7 +103,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-      )}
+      }
 
       {/* Wie zijn we */}
       <section className="bg-background py-20">
@@ -139,7 +139,7 @@ const Index = () => {
       </section>
 
       {/* Waarom J&C? */}
-      <section className="bg-muted py-20">
+      <section className="py-20 bg-[#1e2421]">
         <div className="container mx-auto px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="overflow-hidden rounded-xl">
@@ -191,14 +191,14 @@ const Index = () => {
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+                referrerPolicy="no-referrer-when-downgrade" />
+
             </div>
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>);
+
 };
 
 export default Index;
