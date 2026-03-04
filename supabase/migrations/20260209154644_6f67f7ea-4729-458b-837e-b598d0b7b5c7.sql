@@ -81,7 +81,7 @@ USING (true);
 INSERT INTO public.seo_settings (page_slug, page_title, meta_description) VALUES
 ('home', 'J&C Motorhomes - Aankoop, Verkoop & Montage', 'Uw specialist in aankoop, verkoop, montage en advies van motorhomes in België.'),
 ('motorhomes', 'Ons Aanbod - J&C Motorhomes', 'Bekijk ons aanbod tweedehands motorhomes. Eerlijke prijzen en kwaliteit gegarandeerd.'),
-('diensten', 'Onze Diensten - J&C Motorhomes', 'Montage, advies en begeleiding bij aankoop of verkoop van uw motorhome.'),
+('diensten', 'Ons aanbod - J&C Motorhomes', 'Montage, advies en begeleiding bij aankoop of verkoop van uw motorhome.'),
 ('contact', 'Contact - J&C Motorhomes', 'Neem contact op met J&C Motorhomes voor vragen, offertes of afspraken.'),
 ('aankoop', 'Uw Motorhome Verkopen - J&C Motorhomes', 'Wilt u uw motorhome verkopen? Vraag vrijblijvend een bod aan bij J&C Motorhomes.'),
 ('montage', 'Montage Afspraak - J&C Motorhomes', 'Maak een afspraak voor professionele montage van accessoires op uw motorhome.');

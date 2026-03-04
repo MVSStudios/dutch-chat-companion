@@ -48,7 +48,7 @@ const Index = () => {
             J&C Motorhomes
           </h1>
           <p className="mx-auto mt-4 max-w-2xl font-body text-lg text-primary-foreground/85 md:text-xl">
-            Uw specialist in aankoop, verkoop, montage en advies van motorhomes. Ontdek ons 2dehands aanbod en rij uw droom tegemoet.
+            Uw droom? Uw reis? Bij J&C Motorhomes uw 2dehands mobilehome aan een betaalbare prijs.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" variant="secondary" className="font-body text-base">
@@ -67,7 +67,7 @@ const Index = () => {
       {/* Services */}
       <section className="container mx-auto px-4 py-20">
         <h2 className="text-center font-heading text-3xl font-bold text-foreground md:text-4xl">
-          Onze diensten
+          Ons aanbod
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-center font-body text-muted-foreground">
           Van aankoop tot montage — wij staan voor u klaar.
