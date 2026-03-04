@@ -140,6 +140,30 @@ export type Database = {
         }
         Relationships: []
       }
+      password_reset_requests: {
+        Row: {
+          created_at: string
+          handled_at: string | null
+          id: string
+          status: string
+          user_email: string
+        }
+        Insert: {
+          created_at?: string
+          handled_at?: string | null
+          id?: string
+          status?: string
+          user_email: string
+        }
+        Update: {
+          created_at?: string
+          handled_at?: string | null
+          id?: string
+          status?: string
+          user_email?: string
+        }
+        Relationships: []
+      }
       purchase_requests: {
         Row: {
           brand: string
@@ -286,12 +310,54 @@ export type Database = {
         }
         Relationships: []
       }
+      user_permissions: {
+        Row: {
+          can_view_messages: boolean
+          can_view_montage: boolean
+          can_view_motorhomes: boolean
+          can_view_purchases: boolean
+          can_view_quotes: boolean
+          can_view_seo: boolean
+          created_at: string
+          email: string
+          id: string
+          is_admin: boolean
+          user_id: string
+        }
+        Insert: {
+          can_view_messages?: boolean
+          can_view_montage?: boolean
+          can_view_motorhomes?: boolean
+          can_view_purchases?: boolean
+          can_view_quotes?: boolean
+          can_view_seo?: boolean
+          created_at?: string
+          email: string
+          id?: string
+          is_admin?: boolean
+          user_id: string
+        }
+        Update: {
+          can_view_messages?: boolean
+          can_view_montage?: boolean
+          can_view_motorhomes?: boolean
+          can_view_purchases?: boolean
+          can_view_quotes?: boolean
+          can_view_seo?: boolean
+          created_at?: string
+          email?: string
+          id?: string
+          is_admin?: boolean
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_admin: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
