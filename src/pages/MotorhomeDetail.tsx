@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
-import { ArrowLeft, Calendar, Fuel, Ruler, Users, Gauge } from "lucide-react";
+import { ArrowLeft, Calendar, Fuel, Ruler, Users, Gauge, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -10,6 +11,7 @@ import QuoteRequestForm from "@/components/QuoteRequestForm";
 
 const MotorhomeDetail = () => {
   const { id } = useParams<{ id: string }>();
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const { data: motorhome, isLoading } = useQuery({
     queryKey: ["motorhome", id],
@@ -44,6 +46,8 @@ const MotorhomeDetail = () => {
     );
   }
 
+  const allImages = motorhome.images && motorhome.images.length > 0 ? motorhome.images : ["/placeholder.svg"];
+
   const specs = [
     { icon: Calendar, label: "Bouwjaar", value: motorhome.year },
     { icon: Fuel, label: "Brandstof", value: motorhome.fuel_type },
@@ -52,7 +56,10 @@ const MotorhomeDetail = () => {
     { icon: Gauge, label: "Kilometerstand", value: motorhome.mileage ? `${motorhome.mileage.toLocaleString("nl-BE")} km` : null },
   ].filter((s) => s.value);
 
-  const imageUrl = motorhome.images?.[0] || "/placeholder.svg";
+  const openLightbox = (index: number) => setLightboxIndex(index);
+  const closeLightbox = () => setLightboxIndex(null);
+  const prevImage = () => setLightboxIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : allImages.length - 1));
+  const nextImage = () => setLightboxIndex((prev) => (prev !== null && prev < allImages.length - 1 ? prev + 1 : 0));
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -66,23 +73,24 @@ const MotorhomeDetail = () => {
       <div className="grid gap-8 lg:grid-cols-5">
         {/* Image & info */}
         <div className="lg:col-span-3">
-          <div className="overflow-hidden rounded-xl">
+          <div className="cursor-pointer overflow-hidden rounded-xl" onClick={() => openLightbox(0)}>
             <img
-              src={imageUrl}
+              src={allImages[0]}
               alt={motorhome.title}
-              className="aspect-[16/10] w-full object-cover"
+              className="aspect-[16/10] w-full object-cover transition-transform hover:scale-105"
             />
           </div>
 
           {/* Extra images */}
-          {motorhome.images && motorhome.images.length > 1 && (
+          {allImages.length > 1 && (
             <div className="mt-4 grid grid-cols-4 gap-2">
-              {motorhome.images.slice(1, 5).map((img, i) => (
+              {allImages.slice(1, 5).map((img, i) => (
                 <img
                   key={i}
                   src={img}
                   alt={`${motorhome.title} ${i + 2}`}
-                  className="aspect-square w-full rounded-lg object-cover"
+                  className="aspect-square w-full cursor-pointer rounded-lg object-cover transition-transform hover:scale-105"
+                  onClick={() => openLightbox(i + 1)}
                 />
               ))}
             </div>
@@ -149,6 +157,51 @@ const MotorhomeDetail = () => {
           </Card>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 backdrop-blur-sm"
+          onClick={closeLightbox}
+        >
+          <button
+            onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+            className="absolute right-4 top-4 rounded-full bg-card p-2 text-foreground shadow-lg hover:bg-muted transition-colors"
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          {allImages.length > 1 && (
+            <>
+              <button
+                onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                className="absolute left-4 rounded-full bg-card p-2 text-foreground shadow-lg hover:bg-muted transition-colors"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                className="absolute right-4 rounded-full bg-card p-2 text-foreground shadow-lg hover:bg-muted transition-colors md:right-16"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </button>
+            </>
+          )}
+
+          <img
+            src={allImages[lightboxIndex]}
+            alt={motorhome.title}
+            className="max-h-[85vh] max-w-[90vw] rounded-xl object-contain shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          {allImages.length > 1 && (
+            <div className="absolute bottom-6 text-sm text-muted-foreground">
+              {lightboxIndex + 1} / {allImages.length}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

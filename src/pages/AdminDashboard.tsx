@@ -490,7 +490,7 @@ const AdminDashboard = () => {
               <tbody className="divide-y divide-border">
                 {purchaseRequests?.length === 0 ? (
                   <tr><td colSpan={4} className="px-4 py-8 text-center text-muted-foreground">Geen aankoopaanvragen.</td></tr>
-                ) : purchaseRequests?.map((pr) => (
+                 ) : purchaseRequests?.map((pr) => (
                   <tr key={pr.id} className="transition-colors hover:bg-card/40">
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-3">
@@ -510,6 +510,15 @@ const AdminDashboard = () => {
                     <td className="hidden px-4 py-3 md:table-cell">
                       <p className="text-sm font-medium text-primary">{pr.brand} {pr.model}</p>
                       <p className="text-xs text-muted-foreground">{pr.year} {pr.mileage && `• ${pr.mileage.toLocaleString("nl-BE")} km`}</p>
+                      {(pr as any).images && (pr as any).images.length > 0 && (
+                        <div className="mt-2 flex flex-wrap gap-1">
+                          {(pr as any).images.map((img: string, i: number) => (
+                            <a key={i} href={img} target="_blank" rel="noopener noreferrer">
+                              <img src={img} alt="" className="h-10 w-10 rounded object-cover ring-1 ring-border hover:ring-primary transition-all" />
+                            </a>
+                          ))}
+                        </div>
+                      )}
                     </td>
                     <td className="hidden px-4 py-3 sm:table-cell">
                       <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
