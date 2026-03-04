@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Upload, X, Loader2 } from "lucide-react";
 import snelImg from "@/assets/verkoop-snel.jpg";
 import ontzorgingImg from "@/assets/verkoop-ontzorging.jpg";
 import eerlijkImg from "@/assets/verkoop-eerlijk.jpg";
@@ -33,6 +33,8 @@ const usps = [
 const Purchase = () => {
   const formRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [uploadedImages, setUploadedImages] = useState<string[]>([]);
   const [form, setForm] = useState({
     name: "", email: "", phone: "", brand: "", model: "",
     motor: "", transmission: "", mileage: "",
@@ -41,6 +43,35 @@ const Purchase = () => {
     options: "", damage: "", immediately_available: "",
     description: "", message: ""
   });
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    setUploading(true);
+    const newUrls: string[] = [];
+    for (const file of Array.from(files)) {
+      const ext = file.name.split(".").pop();
+      const fileName = `${crypto.randomUUID()}.${ext}`;
+      const { error } = await supabase.storage
+        .from("purchase-request-images")
+        .upload(fileName, file);
+      if (error) {
+        toast.error(`Fout bij uploaden van ${file.name}`);
+        continue;
+      }
+      const { data: { publicUrl } } = supabase.storage
+        .from("purchase-request-images")
+        .getPublicUrl(fileName);
+      newUrls.push(publicUrl);
+    }
+    setUploadedImages(prev => [...prev, ...newUrls]);
+    setUploading(false);
+    e.target.value = "";
+  };
+
+  const removeImage = (index: number) => {
+    setUploadedImages(prev => prev.filter((_, i) => i !== index));
+  };
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -69,8 +100,9 @@ const Purchase = () => {
       damage: form.damage || null,
       immediately_available: form.immediately_available || null,
       description: form.description || null,
-      message: form.message || null
-    });
+      message: form.message || null,
+      images: uploadedImages.length > 0 ? uploadedImages : null
+    } as any);
 
     if (!error) {
       supabase.functions.invoke("send-notification-email", {
@@ -85,6 +117,7 @@ const Purchase = () => {
     }
     toast.success("Uw aanvraag is verstuurd! Wij nemen zo snel mogelijk contact op.");
     setForm({ name: "", email: "", phone: "", brand: "", model: "", motor: "", transmission: "", mileage: "", first_registration: "", horsepower: "", fuel_type: "", length_m: "", sleeps: "", options: "", damage: "", immediately_available: "", description: "", message: "" });
+    setUploadedImages([]);
   };
 
   return (
@@ -236,7 +269,44 @@ const Purchase = () => {
                 <Label>Extra bericht</Label>
                 <Textarea rows={2} value={form.message} onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))} />
               </div>
-              <Button type="submit" className="w-full" disabled={loading}>
+
+              {/* Foto upload */}
+              <div className="space-y-3">
+                <Label>Foto's van uw camper</Label>
+                <div className="flex flex-wrap gap-2">
+                  {uploadedImages.map((url, i) => (
+                    <div key={i} className="relative h-20 w-20 overflow-hidden rounded-lg border border-border">
+                      <img src={url} alt="" className="h-full w-full object-cover" />
+                      <button
+                        type="button"
+                        onClick={() => removeImage(i)}
+                        className="absolute right-0.5 top-0.5 rounded-full bg-destructive p-0.5 text-destructive-foreground"
+                      >
+                        <X className="h-3 w-3" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                <label className="inline-flex cursor-pointer items-center gap-2">
+                  <Button type="button" variant="outline" size="sm" asChild disabled={uploading}>
+                    <span>
+                      {uploading ? <Loader2 className="mr-1 h-4 w-4 animate-spin" /> : <Upload className="mr-1 h-4 w-4" />}
+                      {uploading ? "Uploaden..." : "Foto's uploaden"}
+                    </span>
+                  </Button>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    className="hidden"
+                    onChange={handleImageUpload}
+                    disabled={uploading}
+                  />
+                </label>
+                <p className="text-xs text-muted-foreground">Upload foto's van uw camper (meerdere mogelijk)</p>
+              </div>
+
+              <Button type="submit" className="w-full" disabled={loading || uploading}>
                 {loading ? "Versturen..." : "Vrijblijvend bod aanvragen"}
               </Button>
             </form>

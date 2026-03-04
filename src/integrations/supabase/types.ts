@@ -151,6 +151,7 @@ export type Database = {
           fuel_type: string | null
           horsepower: number | null
           id: string
+          images: string[] | null
           immediately_available: string | null
           length_m: number | null
           message: string | null
@@ -174,6 +175,7 @@ export type Database = {
           fuel_type?: string | null
           horsepower?: number | null
           id?: string
+          images?: string[] | null
           immediately_available?: string | null
           length_m?: number | null
           message?: string | null
@@ -197,6 +199,7 @@ export type Database = {
           fuel_type?: string | null
           horsepower?: number | null
           id?: string
+          images?: string[] | null
           immediately_available?: string | null
           length_m?: number | null
           message?: string | null
