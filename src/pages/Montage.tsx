@@ -14,8 +14,10 @@ const serviceTypes = [
   "Satelliet- & TV-installaties",
   "Fietsendragers & accessoires",
   "Alarmsystemen & beveiliging",
-  "Markiezen & luifels",
+  "luifels & verlichting",
   "Verwarmingssystemen",
+  "Motor upgrade & chiptuning",
+  "Coating & beschermlagen",
   "Overig",
 ];
 
