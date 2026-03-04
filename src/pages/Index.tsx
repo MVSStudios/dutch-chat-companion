@@ -87,7 +87,7 @@ const Index = () => {
 
       {/* Featured */}
       {motorhomes && motorhomes.length > 0 &&
-      <section className="bg-muted py-20">
+      <section className="py-20 bg-[#212121]">
           <div className="container mx-auto px-4">
             <h2 className="text-center font-heading text-3xl font-bold text-foreground md:text-4xl">Ons aanbod</h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -106,7 +106,7 @@ const Index = () => {
       }
 
       {/* Wie zijn we */}
-      <section className="bg-background py-20">
+      <section className="py-20 bg-[#212121]">
         <div className="container mx-auto px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
@@ -139,7 +139,7 @@ const Index = () => {
       </section>
 
       {/* Waarom J&C? */}
-      <section className="py-20 bg-[#1e2421]">
+      <section className="py-20 bg-[#212121]">
         <div className="container mx-auto px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="overflow-hidden rounded-xl">
