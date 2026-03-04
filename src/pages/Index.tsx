@@ -65,7 +65,7 @@ const Index = () => {
       </section>
 
       {/* Services */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-4 py-20 bg-[#212121]">
         <h2 className="text-center font-heading text-3xl font-bold text-foreground md:text-4xl">
           Ons aanbod
         </h2>
