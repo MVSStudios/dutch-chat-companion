@@ -173,7 +173,8 @@ const Index = () => {
                   <p className="font-body text-muted-foreground">België</p>
                   <p className="mt-4 font-body text-muted-foreground">
                     <strong className="text-foreground">Tel:</strong>{" "}
-                    <a href="tel:+32468331480" className="text-primary hover:underline">+32 468 33 14 80</a>
+                    <a href="verkoop:+32468331480" className="text-primary hover:underline">+32 468 33 14 80</a>
+                    <a href="montage:+32498160183" className="text-primary hover:underline">+32 498 16 01 83</a>
                   </p>
                   <p className="font-body text-muted-foreground">
                     <strong className="text-foreground">E-mail:</strong>{" "}
