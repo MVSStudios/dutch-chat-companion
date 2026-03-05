@@ -11,8 +11,7 @@ const Navbar = () => {
   { to: "/motorhomes", label: "Aanbod" },
   { to: "/verkoop", label: "Mijn motorhome verkopen" },
   { to: "/montage", label: "Montage" },
-
-  { to: "/contact", label: "Contact" }];
+  ];
 
   const isActive = (path: string) => location.pathname === path;
 
