@@ -9,7 +9,11 @@ const Footer = () => {
           <div>
             <h3 className="font-heading text-2xl font-bold">J&C Motorhomes</h3>
             <p className="mt-3 font-body text-sm opacity-80">
-              Uw droom? Uw reis? Bij J&C Motorhomes uw 2dehands mobilehome aan een betaalbare prijs.
+              Uw droom? Uw wens? Uw reis? Bij J&C Motorhomes uw 2dehands mobilehome aan een betaalbare prijs.
+            </p>
+             <h3 className="font-heading text-2xl font-bold">J&C Motorhomes</h3>
+            <p className="mt-3 font-body text-sm opacity-80">
+              Bij J&C Motorhomes uw 2dehands mobilehome aan een betaalbare prijs.
             </p>
           </div>
 
