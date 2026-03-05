@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <h3 className="font-heading text-2xl font-bold">J&C Motorhomes</h3>
+            <h3 className="text-2xl font-bold font-serif">J&C Motorhomes</h3>
             <p className="mt-3 font-body text-sm opacity-80">
               Uw droom? Uw wens? Uw reis? Bij J&C  uw 2dehands mobilehome aan een betaalbare prijs.
             </p>
@@ -51,8 +51,8 @@ const Footer = () => {
           © {new Date().getFullYear()} J&C Motorhomes. Alle rechten voorbehouden.
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default Footer;
