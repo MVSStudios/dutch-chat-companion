@@ -151,7 +151,7 @@ const Index = () => {
             <div>
               <h2 className="font-heading text-3xl font-bold text-foreground md:text-4xl">Waarom J&C?</h2>
               <p className="mt-4 font-body leading-relaxed text-muted-foreground">
-                Aan - en verkoop doen er al velen. Wij gaan dat stapje verder. Wij bieden u budget vriendelijke tweedehands motorhomes. persoonlijk advies en gezamenlijk overleg staan hierbij voorop. De snel groeiende markt heeft ons aan den lijve doen vaststellen dat de nood aan persoonlijke opvolging, service en aanspreekpunt meer dan ooit van tel zijn. Met deze focus streven we ernaar om elke dag het beste van onszelf te geven en met onze passie jullie dromen helpen waar te maken.
+                Aan - en verkoop doen er al velen. Wij gaan dat stapje verder. Wij bieden u budget vriendelijke tweedehands motorhomes. Persoonlijk advies en gezamenlijk overleg staan hierbij voorop. De snel groeiende markt heeft ons aan den lijve doen vaststellen dat de nood aan persoonlijke opvolging, service en aanspreekpunt meer dan ooit van tel zijn. Met deze focus streven we ernaar om elke dag het beste van onszelf te geven en met onze passie jullie dromen helpen waar te maken.
               </p>
               <p className="mt-4 font-body leading-relaxed text-muted-foreground">
                 Onze kleinschaligheid en geografische ligging te Kortrijk zijn onze troeven die zich vertalen in jullie budgettair haalbare dromen vol leuke reisverhalen. Uw droom? Uw reis? Bij J&C motorhomes aan een betaalbare prijs.
