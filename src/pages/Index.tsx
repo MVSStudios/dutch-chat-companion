@@ -42,7 +42,7 @@ const Index = () => {
       {/* Hero */}
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
         <img src={heroImage} alt="Motorhome in landschap" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+        <div className="absolute inset-0 bg-black/[0.39]" style={{ background: "var(--gradient-hero)" }} />
         <div className="relative z-10 container mx-auto px-4 py-20 text-center">
           <h1 className="font-heading text-4xl font-bold text-primary-foreground md:text-6xl lg:text-7xl">
             J&amp;C Motorhomes
