@@ -170,7 +170,7 @@ const Index = () => {
               <div className="flex items-start gap-4">
                 <MapPin className="mt-1 h-6 w-6 shrink-0 text-primary" />
                 <div>
-                  <h3 className="font-heading text-xl font-semibold text-foreground">J&C Motorhomes</h3>
+                  <h3 className="text-xl font-semibold text-foreground font-serif">J&C Motorhomes</h3>
                   <p className="mt-2 font-body text-muted-foreground">Bissegemsestraat 43/003</p>
                   <p className="font-body text-muted-foreground">8501 Bissegem</p>
                   <p className="font-body text-muted-foreground">België</p>
