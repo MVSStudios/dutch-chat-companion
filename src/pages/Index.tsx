@@ -44,8 +44,8 @@ const Index = () => {
         <img src={heroImage} alt="Motorhome in landschap" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/[0.39]" style={{ background: "var(--gradient-hero)" }} />
         <div className="relative z-10 container mx-auto px-4 py-20 text-center">
-          <h1 className="font-heading text-4xl font-bold text-primary-foreground md:text-6xl lg:text-7xl">
-            J&amp;C Motorhomes
+          <h1 className="text-4xl font-bold text-primary-foreground md:text-6xl font-serif lg:text-6xl">J&C Motorhomes
+
           </h1>
           <p className="mx-auto mt-4 max-w-2xl font-body text-lg text-primary-foreground/85 md:text-xl">
             Uw droom? Uw wens? Uw reis?
@@ -81,7 +81,7 @@ const Index = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                 <s.icon className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="mt-5 font-heading text-xl font-semibold text-card-foreground">{s.title}</h3>
+              <h3 className="mt-5 text-xl text-card-foreground font-serif font-semibold">{s.title}</h3>
               <p className="mt-2 font-body text-sm leading-relaxed text-muted-foreground">{s.description}</p>
             </div>
           )}
