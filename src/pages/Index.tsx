@@ -11,7 +11,7 @@ import waaromImage from "@/assets/waarom-jc.png";
 const services = [{
   icon: TrendingUp,
   title: "Aankoop & Verkoop",
-  description: "Wij helpen u bij het vinden of verkopen van uw droom motorhome. Eerlijk advies en transparante prijzen."
+  description: "Wij helpen u bij het vinden of verkopen van uw motorhome. Eerlijk advies en transparante prijzen."
 }, {
   icon: Wrench,
   title: "Montage & Installatie",
