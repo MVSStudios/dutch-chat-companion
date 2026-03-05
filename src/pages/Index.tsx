@@ -81,7 +81,7 @@ const Index = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                 <s.icon className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="mt-5 font-heading text-xl font-semibold text-card-foreground">{s.title}</h3>
+              <h3 className="mt-5 text-xl text-card-foreground font-serif font-semibold">{s.title}</h3>
               <p className="mt-2 font-body text-sm leading-relaxed text-muted-foreground">{s.description}</p>
             </div>
           )}
