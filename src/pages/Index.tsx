@@ -48,7 +48,10 @@ const Index = () => {
             J&C Motorhomes
           </h1>
           <p className="mx-auto mt-4 max-w-2xl font-body text-lg text-primary-foreground/85 md:text-xl">
-            Uw droom? Uw reis? Bij J&amp;C Motorhomes uw 2dehands mobilehome aan een betaalbare prijs.
+            Uw droom? Uw wens? Uw reis?
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl font-body text-lg text-primary-foreground/85 md:text-xl">
+            Uw droom? Uw reis? Bij J&amp;C uw tweedehands motorhome aan een betaalbare prijs.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" variant="secondary" className="font-body text-base">
