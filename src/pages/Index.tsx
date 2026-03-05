@@ -122,10 +122,10 @@ Samen combineren we commerciële kracht met technische expertise - een unieke tr
               </p>
               <h3 className="mt-8 font-heading text-2xl font-bold text-foreground">Wat ons drijft?</h3>
               <p className="mt-4 font-body leading-relaxed text-muted-foreground">
-                De nood en steeds groter wordende vraag naar betaalbare 2dehands motorhomes.
+
               </p>
               <p className="mt-4 font-body leading-relaxed text-muted-foreground">
-                Het kunnen aanbieden van een luisterend oor en hierbij streven naar een grote klantentevredenheid door een combinatie van een toegankelijke en persoonlijke aanpak binnen een steeds groter wordende dealerwereld.
+
               </p>
               <Button asChild size="lg" className="mt-8">
                 <Link to="/contact">
