@@ -114,9 +114,9 @@ const Index = () => {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <h2 className="font-heading text-3xl font-bold text-foreground md:text-4xl">Wie zijn we?</h2>
-              <p className="mt-4 font-body leading-relaxed text-muted-foreground">
-                Wij zijn Johan en Clenn, samen bundelen wij ruim twintig jaar ervaring in de motorhomebranche. Johan in verkoop, begeleiding en advies. Clenn als technieker, installateur en eveneens technisch advies. Onze passie en dynamiek willen wij nu bundelen op een onafhankelijke manier en op zelfstandige basis.
-              </p>
+              <p className="mt-4 font-body leading-relaxed text-muted-foreground">Wij zijn Johan en Clenn, samen bundelen wij ruim twintig jaar ervaring in de motorhomebranche. Johan beschikt over een ruime achtergrond in verkoop en klantenbegeleiding, met sterke communicatieve vaardigheden en marktkennis.
+Clenn is een ervaren technieker met diepgaande kennis van motorhomes, onderhoud en technische installaties.
+Samen combineren we commerciële kracht met technische expertise - een unieke troef in deze markt.</p>
               <p className="mt-4 font-body leading-relaxed text-muted-foreground">
                 Of je nu start met je eerste motorhome-ervaring of een doorwinterde reiziger bent: bij ons ben je geen nummer, maar een reiziger met een verhaal. Wij denken mee, zoeken oplossingen op maat en gaan voor een langdurige vertrouwensrelatie.
               </p>
@@ -151,7 +151,7 @@ const Index = () => {
             <div>
               <h2 className="font-heading text-3xl font-bold text-foreground md:text-4xl">Waarom J&C?</h2>
               <p className="mt-4 font-body leading-relaxed text-muted-foreground">
-                Aan - en verkoop doen er al velen. Wij gaan dat stapje verder. Wij bieden u budget vriendelijke tweedehands motorhomes. Persoonlijk advies en gezamenlijk overleg staan hierbij voorop. De snel groeiende markt heeft ons aan den lijve doen vaststellen dat de nood aan persoonlijke opvolging, service en aanspreekpunt meer dan ooit van tel zijn. Met deze focus streven we ernaar om elke dag het beste van onszelf te geven en met onze passie jullie dromen helpen waar te maken.
+
               </p>
               <p className="mt-4 font-body leading-relaxed text-muted-foreground">
                 Onze kleinschaligheid en geografische ligging te Kortrijk zijn onze troeven die zich vertalen in jullie budgettair haalbare dromen vol leuke reisverhalen. Uw droom? Uw reis? Bij J&C motorhomes aan een betaalbare prijs.
