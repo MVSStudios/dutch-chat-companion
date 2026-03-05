@@ -44,8 +44,8 @@ const Index = () => {
         <img src={heroImage} alt="Motorhome in landschap" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/[0.39]" style={{ background: "var(--gradient-hero)" }} />
         <div className="relative z-10 container mx-auto px-4 py-20 text-center">
-          <h1 className="font-heading text-4xl font-bold text-primary-foreground md:text-6xl lg:text-7xl">
-            J&amp;C Motorhomes
+          <h1 className="text-4xl font-bold text-primary-foreground md:text-6xl font-serif lg:text-6xl">J&C Motorhomes
+
           </h1>
           <p className="mx-auto mt-4 max-w-2xl font-body text-lg text-primary-foreground/85 md:text-xl">
             Uw droom? Uw wens? Uw reis?
