@@ -33,6 +33,7 @@ const Footer = () => {
                 <span>Verkoop: +32 468 33 14 80</span>
               </div>
                <div className="flex items-center gap-2 text-sm opacity-80">
+                <Phone className="h-4 w-4 shrink-0" />
                 <span>Montage: +32 498 16 01 83</span>
               </div>
               <div className="flex items-center gap-2 text-sm opacity-80">
