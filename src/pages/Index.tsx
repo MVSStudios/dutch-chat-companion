@@ -149,7 +149,7 @@ Samen combineren we commerciële kracht met technische expertise - een unieke tr
               <img src={waaromImage} alt="Waarom J&C Motorhomes" className="h-auto w-full object-cover" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-foreground md:text-4xl font-serif">Waarom J&C?</h2>
+              <h2 className="text-3xl text-foreground md:text-4xl font-serif font-semibold">Waarom J&C?</h2>
               <p className="mt-4 font-body leading-relaxed text-muted-foreground">
                 Wij stellen vast dat de motorhome wereld in België een overaanbod aan grote dealers heeft. De snel groeiende markt heeft ons aan den lijve doen vaststellen dat de nood aan persoonlijke opvolging, service en aanspreekpunt meer dan ooit van tel zijn. Met deze focus streven we ernaar om elke dag het beste van onszelf te geven en met onze passie jullie dromen helpen waar te maken.
               </p>
