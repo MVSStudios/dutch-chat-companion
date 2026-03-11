@@ -16,7 +16,7 @@ const usps = [
 {
   image: snelImg,
   title: "Snel en zorgeloos",
-  description: "Wij garanderen een vlotte afhandeling en snelle uitbetaling, enkele weken. Spoedverkoop? Een directe overname is ook mogelijk."
+  description: "Ervaar het gemak van een zorgeloos process. Wij regelen alles tot in de puntjes. Dankzij een efficiënte en vlotte afhandeling."
 },
 {
   image: ontzorgingImg,
