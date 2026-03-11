@@ -125,7 +125,7 @@ const Purchase = () => {
       {/* Hero / landing section */}
       <section className="py-16 md:py-24 bg-[#1e2421]">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold text-foreground md:text-4xl lg:text-5xl font-serif">
+          <h1 className="text-3xl font-bold text-foreground md:text-4xl font-serif lg:text-4xl">
             Waarom jouw mobilhome aan J&C Motorhomes verkopen?
           </h1>
           <p className="mt-4 max-w-3xl font-body text-muted-foreground">
