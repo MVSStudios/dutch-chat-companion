@@ -10,9 +10,7 @@ const Navbar = () => {
   { to: "/", label: "Home" },
   { to: "/motorhomes", label: "Aanbod" },
   { to: "/verkoop", label: "Mijn motorhome verkopen" },
-  { to: "/montage", label: "Montage" },
-
-  { to: "/contact", label: "Contact" }];
+  { to: "/montage", label: "Montage" }];
 
   const isActive = (path: string) => location.pathname === path;
 
