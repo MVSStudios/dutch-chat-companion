@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import SeoHead from "@/components/SeoHead";
+import LocationSection from "@/components/LocationSection";
 const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
