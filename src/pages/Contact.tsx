@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import SeoHead from "@/components/SeoHead";
+import LocationSection from "@/components/LocationSection";
 const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
@@ -66,7 +67,7 @@ const Contact = () => {
     label: "Locatie",
     value: "Bissegemsestraat 43/003 8501 Kortrijk, België"
   },];
-  return <div className="container mx-auto px-4 py-12">
+  return <><div className="container mx-auto px-4 py-12">
       <SeoHead slug="contact" fallbackTitle="Contact - J&C Motorhomes" />
       <h1 className="font-heading text-3xl font-bold text-foreground md:text-4xl">Contact</h1>
       <p className="mt-2 font-body text-muted-foreground">
@@ -139,6 +140,9 @@ const Contact = () => {
             </div>)}
         </div>
       </div>
-    </div>;
+    </div>
+
+    <LocationSection />
+  </>;
 };
 export default Contact;
