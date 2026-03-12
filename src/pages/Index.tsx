@@ -7,6 +7,7 @@ import MotorhomeCard from "@/components/MotorhomeCard";
 import heroImage from "@/assets/hero-motorhome.jpg";
 import aboutImage from "@/assets/about-team.png";
 import waaromImage from "@/assets/waarom-jc.png";
+import LocationSection from "@/components/LocationSection";
 
 const services = [{
   icon: TrendingUp,
