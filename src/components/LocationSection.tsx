@@ -1,4 +1,4 @@
-import { MapPin, Clock } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 const LocationSection = () => (
   <section className="py-20 bg-[#1e2421]">
@@ -25,23 +25,6 @@ const LocationSection = () => (
                 <strong className="text-foreground">E-mail:</strong>{" "}
                 <a href="mailto:info@jc-motorhomes.be" className="text-primary hover:underline">info@jc-motorhomes.be</a>
               </p>
-            </div>
-          </div>
-        </div>
-        <div className="mt-6 rounded-xl border border-border bg-card p-8">
-          <div className="flex items-start gap-4">
-            <Clock className="mt-1 h-6 w-6 shrink-0 text-primary" />
-            <div>
-              <h3 className="text-xl font-semibold text-foreground font-serif">Openingsuren</h3>
-              <ul className="mt-2 space-y-1 font-body text-sm text-muted-foreground">
-                <li className="flex justify-between gap-4"><span>Maandag</span><span>8:30 - 12:00 / 13:00 - 18:00</span></li>
-                <li className="flex justify-between gap-4"><span>Dinsdag</span><span>8:30 - 12:00 / 13:00 - 18:00</span></li>
-                <li className="flex justify-between gap-4"><span>Woensdag</span><span>13:00 - 17:00</span></li>
-                <li className="flex justify-between gap-4"><span>Donderdag</span><span>13:00 - 18:00</span></li>
-                <li className="flex justify-between gap-4"><span>Vrijdag</span><span>13:00 - 18:00</span></li>
-                <li className="flex justify-between gap-4"><span>Zaterdag</span><span>9:00 - 15:00</span></li>
-                <li className="flex justify-between gap-4"><span>Zondag</span><span className="italic">Enkel telefonisch</span></li>
-              </ul>
             </div>
           </div>
         </div>
