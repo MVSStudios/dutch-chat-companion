@@ -1,4 +1,4 @@
-import { MapPin } from "lucide-react";
+import { MapPin, Clock } from "lucide-react";
 
 const LocationSection = () => (
   <section className="py-20 bg-[#1e2421]">
