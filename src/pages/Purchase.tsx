@@ -16,7 +16,7 @@ const usps = [
 {
   image: snelImg,
   title: "Snel en zorgeloos",
-  description: "Ervaar het gemak van een zorgeloos proces. Wij regelen alles tot in de puntjes. Dankzij een efficiënte en vlotte afhandeling."
+  description: "Ervaar het gemak van een zorgeloos proces. Wij regelen alles tot in de puntjes. Dankzij een efficiënte en vlotte afhandeling.Ook verkoop in concessie."
 },
 {
   image: ontzorgingImg,
