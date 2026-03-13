@@ -28,6 +28,23 @@ const LocationSection = () => (
             </div>
           </div>
         </div>
+        <div className="mt-6 rounded-xl border border-border bg-card p-8">
+          <div className="flex items-start gap-4">
+            <Clock className="mt-1 h-6 w-6 shrink-0 text-primary" />
+            <div>
+              <h3 className="text-xl font-semibold text-foreground font-serif">Openingsuren</h3>
+              <div className="mt-2 space-y-1 font-body text-sm text-muted-foreground">
+                <div className="flex justify-between gap-8"><span>Maandag</span><span>8:30 – 12:00 / 13:00 – 18:00</span></div>
+                <div className="flex justify-between gap-8"><span>Dinsdag</span><span>8:30 – 12:00 / 13:00 – 18:00</span></div>
+                <div className="flex justify-between gap-8"><span>Woensdag</span><span>13:00 – 17:00</span></div>
+                <div className="flex justify-between gap-8"><span>Donderdag</span><span>13:00 – 18:00</span></div>
+                <div className="flex justify-between gap-8"><span>Vrijdag</span><span>13:00 – 18:00</span></div>
+                <div className="flex justify-between gap-8"><span>Zaterdag</span><span>9:00 – 15:00</span></div>
+                <div className="flex justify-between gap-8"><span>Zondag</span><span className="italic">Enkel telefonisch</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="overflow-hidden rounded-xl border border-border">
           <iframe
             title="Locatie J&C Motorhomes"
