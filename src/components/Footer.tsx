@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
-
+// Footer component for the website - Gemaakt door Mattis Vlieghe
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-primary text-primary-foreground">
