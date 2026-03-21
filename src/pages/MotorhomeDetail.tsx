@@ -54,6 +54,7 @@ const MotorhomeDetail = () => {
     { icon: Ruler, label: "Lengte", value: motorhome.length_m ? `${motorhome.length_m}m` : null },
     { icon: Users, label: "Slaapplaatsen", value: motorhome.sleeps },
     { icon: Gauge, label: "Kilometerstand", value: motorhome.mileage ? `${motorhome.mileage.toLocaleString("nl-BE")} km` : null },
+    { icon: Gauge, label: "Transmissie", value: (motorhome as any).transmission },
   ].filter((s) => s.value);
 
   const openLightbox = (index: number) => setLightboxIndex(index);

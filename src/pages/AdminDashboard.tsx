@@ -26,7 +26,7 @@ type Motorhome = Tables<"motorhomes">;
 const emptyForm = {
   title: "", description: "", price: "", year: "", brand: "", model: "",
   mileage: "", fuel_type: "", length_m: "", sleeps: "", features: "",
-  status: "available" as string, images: [] as string[],
+  status: "available" as string, images: [] as string[], transmission: "",
 };
 
 const AdminDashboard = () => {
@@ -171,6 +171,7 @@ const AdminDashboard = () => {
         features: form.features ? form.features.split(",").map(f => f.trim()).filter(Boolean) : null,
         status: form.status,
         images: form.images.length > 0 ? form.images : null,
+        transmission: form.transmission || null,
       };
       if (editingId) {
         const { error } = await supabase.from("motorhomes").update(payload).eq("id", editingId);
@@ -253,7 +254,7 @@ const AdminDashboard = () => {
       mileage: m.mileage?.toString() || "", fuel_type: m.fuel_type || "",
       length_m: m.length_m?.toString() || "", sleeps: m.sleeps?.toString() || "",
       features: m.features?.join(", ") || "", status: m.status,
-      images: m.images || [],
+      images: m.images || [], transmission: (m as any).transmission || "",
     });
     setDialogOpen(true);
   };
@@ -467,6 +468,17 @@ const AdminDashboard = () => {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2"><Label>Lengte (m)</Label><Input type="number" step="0.1" value={form.length_m} onChange={e => setForm(p => ({ ...p, length_m: e.target.value }))} /></div>
                       <div className="space-y-2"><Label>Slaapplaatsen</Label><Input type="number" value={form.sleeps} onChange={e => setForm(p => ({ ...p, sleeps: e.target.value }))} /></div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label>Transmissie</Label>
+                      <Select value={form.transmission} onValueChange={v => setForm(p => ({ ...p, transmission: v }))}>
+                        <SelectTrigger><SelectValue placeholder="Selecteer transmissie" /></SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="Manueel">Manueel</SelectItem>
+                          <SelectItem value="Automaat">Automaat</SelectItem>
+                          <SelectItem value="Semi-automaat">Semi-automaat</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
                     <div className="space-y-2">
                       <Label>Status</Label>
