@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Wrench, CheckCircle } from "lucide-react";
+import SeoHead from "@/components/SeoHead";
 
 const serviceTypes = [
   "Zonnepanelen & energiesystemen",
@@ -59,6 +60,7 @@ const Montage = () => {
 
   return (
     <div className="container mx-auto px-4 py-12">
+      <SeoHead slug="montage" fallbackTitle="Montage Afspraak - J&C Motorhomes" fallbackDescription="Maak een afspraak voor professionele montage van accessoires op uw motorhome." />
       <div className="flex items-start gap-4">
         <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-primary/10">
           <Wrench className="h-7 w-7 text-primary" />

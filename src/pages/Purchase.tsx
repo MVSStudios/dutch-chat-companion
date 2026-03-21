@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { MessageCircle, Upload, X, Loader2 } from "lucide-react";
+import SeoHead from "@/components/SeoHead";
 import snelImg from "@/assets/verkoop-snel.jpg";
 import ontzorgingImg from "@/assets/verkoop-ontzorging.jpg";
 import eerlijkImg from "@/assets/verkoop-eerlijk.jpg";
@@ -122,6 +123,7 @@ const Purchase = () => {
 
   return (
     <div>
+      <SeoHead slug="aankoop" fallbackTitle="Uw Motorhome Verkopen - J&C Motorhomes" fallbackDescription="Wilt u uw motorhome verkopen? Vraag vrijblijvend een bod aan." />
       {/* Hero / landing section */}
       <section className="py-16 md:py-24 bg-[#1e2421]">
         <div className="container mx-auto px-4">
