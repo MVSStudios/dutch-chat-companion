@@ -33,10 +33,10 @@ const LocationSection = () => (
                 <div className="space-y-1 font-body text-sm text-muted-foreground">
                   <div className="flex justify-between gap-8"><span>Maandag</span><span>8:30 – 12:00 / 13:00 – 18:00</span></div>
                   <div className="flex justify-between gap-8"><span>Dinsdag</span><span>8:30 – 12:00 / 13:00 – 18:00</span></div>
-                  <div className="flex justify-between gap-8"><span>Woensdag</span><span>8:30 – 12:00 / 13:00 – 17:00</span></div>
+                  <div className="flex justify-between gap-8"><span>Woensdag</span><span>8:30 – 12:00 / 13:00 – 18:00</span></div>
                   <div className="flex justify-between gap-8"><span>Donderdag</span><span>8:30 – 12:00 / 13:00 – 18:00</span></div>
                   <div className="flex justify-between gap-8"><span>Vrijdag</span><span>8:30 – 12:00 / 13:00 – 18:00</span></div>
-                  <div className="flex justify-between gap-8"><span>Zaterdag</span><span>8:30 – 12:00 / 9:00 – 15:00</span></div>
+                  <div className="flex justify-between gap-8"><span>Zaterdag</span><span>9:00 – 14:00 / Op afspraak</span></div>
                   <div className="flex justify-between gap-8"><span>Zondag</span><span className="italic">Enkel telefonisch bereikbaar</span></div>
                 </div>
               </div>
