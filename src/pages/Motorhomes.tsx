@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import MotorhomeCard from "@/components/MotorhomeCard";
 import { Loader2 } from "lucide-react";
+import SeoHead from "@/components/SeoHead";
 
 const Motorhomes = () => {
   const { data: motorhomes, isLoading } = useQuery({
