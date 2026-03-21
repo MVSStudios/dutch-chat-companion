@@ -470,6 +470,17 @@ const AdminDashboard = () => {
                       <div className="space-y-2"><Label>Slaapplaatsen</Label><Input type="number" value={form.sleeps} onChange={e => setForm(p => ({ ...p, sleeps: e.target.value }))} /></div>
                     </div>
                     <div className="space-y-2">
+                      <Label>Transmissie</Label>
+                      <Select value={form.transmission} onValueChange={v => setForm(p => ({ ...p, transmission: v }))}>
+                        <SelectTrigger><SelectValue placeholder="Selecteer transmissie" /></SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="Manueel">Manueel</SelectItem>
+                          <SelectItem value="Automaat">Automaat</SelectItem>
+                          <SelectItem value="Semi-automaat">Semi-automaat</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="space-y-2">
                       <Label>Status</Label>
                       <Select value={form.status} onValueChange={v => setForm(p => ({ ...p, status: v }))}>
                         <SelectTrigger><SelectValue /></SelectTrigger>
