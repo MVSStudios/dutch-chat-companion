@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 border-t border-primary-foreground/20 pt-6 text-center font-body text-sm opacity-60">
-          © {new Date().getFullYear()} J&C Motorhomes. Alle rechten voorbehouden. - Wij zijn niet aansprakelijk voor kennelijke fouten of drukfouten op deze website. - Website gemaakt door Mattis Vlieghe.
+          © {new Date().getFullYear()} J&C Motorhomes. Alle rechten voorbehouden. - Wij zijn niet aansprakelijk voor kennelijke fouten of drukfouten op deze website. - Website gemaakt door MVStudios.
         </div>
       </div>
     </footer>);
