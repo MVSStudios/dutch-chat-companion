@@ -99,6 +99,7 @@ export type Database = {
           sleeps: number | null
           status: string
           title: string
+          transmission: string | null
           updated_at: string
           year: number | null
         }
@@ -117,6 +118,7 @@ export type Database = {
           sleeps?: number | null
           status?: string
           title: string
+          transmission?: string | null
           updated_at?: string
           year?: number | null
         }
@@ -135,6 +137,7 @@ export type Database = {
           sleeps?: number | null
           status?: string
           title?: string
+          transmission?: string | null
           updated_at?: string
           year?: number | null
         }
