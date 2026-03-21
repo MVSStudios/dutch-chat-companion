@@ -171,6 +171,7 @@ const AdminDashboard = () => {
         features: form.features ? form.features.split(",").map(f => f.trim()).filter(Boolean) : null,
         status: form.status,
         images: form.images.length > 0 ? form.images : null,
+        transmission: form.transmission || null,
       };
       if (editingId) {
         const { error } = await supabase.from("motorhomes").update(payload).eq("id", editingId);
