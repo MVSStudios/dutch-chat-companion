@@ -123,6 +123,7 @@ const Purchase = () => {
 
   return (
     <div>
+      <SeoHead slug="aankoop" fallbackTitle="Uw Motorhome Verkopen - J&C Motorhomes" fallbackDescription="Wilt u uw motorhome verkopen? Vraag vrijblijvend een bod aan." />
       {/* Hero / landing section */}
       <section className="py-16 md:py-24 bg-[#1e2421]">
         <div className="container mx-auto px-4">
