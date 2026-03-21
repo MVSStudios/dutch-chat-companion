@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { MessageCircle, Upload, X, Loader2 } from "lucide-react";
+import SeoHead from "@/components/SeoHead";
 import snelImg from "@/assets/verkoop-snel.jpg";
 import ontzorgingImg from "@/assets/verkoop-ontzorging.jpg";
 import eerlijkImg from "@/assets/verkoop-eerlijk.jpg";
