@@ -149,7 +149,7 @@ Samen combineren we commerciële kracht met technische expertise - een unieke tr
         <div className="container mx-auto px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="overflow-hidden rounded-xl">
-              <img src={waaromImage} alt="Waarom J&C Motorhomes" className="h-auto w-full object-cover" />
+              <img alt="Waarom J&C Motorhomes" className="h-auto w-full object-cover" src="/lovable-uploads/ebd4fbd4-4cd0-468a-ade1-9e560df916ac.jpg" />
             </div>
             <div>
               <h2 className="text-3xl text-foreground md:text-4xl font-serif font-semibold">Waarom J&C?</h2>
