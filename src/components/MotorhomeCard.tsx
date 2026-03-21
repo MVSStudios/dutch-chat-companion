@@ -56,6 +56,9 @@ const MotorhomeCard = ({ id, title, price, year, fuel_type, length_m, sleeps, im
           {sleeps && (
             <span className="flex items-center gap-1"><Users className="h-3.5 w-3.5" />{sleeps} pers.</span>
           )}
+          {transmission && (
+            <span className="flex items-center gap-1"><Cog className="h-3.5 w-3.5" />{transmission}</span>
+          )}
         </div>
         <Button asChild variant="outline" className="mt-4 w-full">
           <Link to={`/motorhomes/${id}`}>Bekijk details</Link>
