@@ -254,7 +254,7 @@ const AdminDashboard = () => {
       mileage: m.mileage?.toString() || "", fuel_type: m.fuel_type || "",
       length_m: m.length_m?.toString() || "", sleeps: m.sleeps?.toString() || "",
       features: m.features?.join(", ") || "", status: m.status,
-      images: m.images || [],
+      images: m.images || [], transmission: (m as any).transmission || "",
     });
     setDialogOpen(true);
   };
