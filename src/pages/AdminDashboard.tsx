@@ -26,7 +26,7 @@ type Motorhome = Tables<"motorhomes">;
 const emptyForm = {
   title: "", description: "", price: "", year: "", brand: "", model: "",
   mileage: "", fuel_type: "", length_m: "", sleeps: "", features: "",
-  status: "available" as string, images: [] as string[],
+  status: "available" as string, images: [] as string[], transmission: "",
 };
 
 const AdminDashboard = () => {
