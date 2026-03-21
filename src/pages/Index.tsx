@@ -41,6 +41,7 @@ const Index = () => {
 
   return (
     <div>
+      <SeoHead slug="home" fallbackTitle="J&C Motorhomes - Aankoop, Verkoop & Montage" fallbackDescription="Uw specialist in aankoop, verkoop, montage en advies van tweedehands motorhomes in België." />
       {/* Hero */}
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
         <img src={heroImage} alt="Motorhome in landschap" className="absolute inset-0 h-full w-full object-cover" />
