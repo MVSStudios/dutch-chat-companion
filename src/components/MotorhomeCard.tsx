@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Fuel, Ruler, Users, Calendar } from "lucide-react";
+import { Fuel, Ruler, Users, Calendar, Cog } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -15,9 +15,10 @@ interface MotorhomeCardProps {
   sleeps: number | null;
   images: string[] | null;
   status: string;
+  transmission: string | null;
 }
 
-const MotorhomeCard = ({ id, title, price, year, fuel_type, length_m, sleeps, images, status }: MotorhomeCardProps) => {
+const MotorhomeCard = ({ id, title, price, year, fuel_type, length_m, sleeps, images, status, transmission }: MotorhomeCardProps) => {
   const imageUrl = images?.[0] || "/placeholder.svg";
   const statusLabel = status === "sold" ? "Verkocht" : status === "reserved" ? "Gereserveerd" : null;
 
