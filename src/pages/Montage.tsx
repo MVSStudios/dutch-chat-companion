@@ -16,7 +16,7 @@ const serviceTypes = [
   "Fietsendragers & accessoires",
   "Alarmsystemen & beveiliging",
   "Luifels & verlichting",
-  "Verwarmingssystemen",
+  "Trekhaken & level systemen",
   "Motor upgrade & chiptuning",
   "Coating & beschermlagen",
   "Overig",
