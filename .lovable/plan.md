@@ -1,12 +1,8 @@
 
 
-## Plan: Transmissie tonen op motorhome kaarten
+## Plan: Montage optie aanpassen
 
-De transmissie toevoegen als extra spec-item op elke motorhome kaart in het overzicht.
+Eén tekstaanpassing in `src/pages/Montage.tsx`:
 
-### Wijziging
-
-**`src/components/MotorhomeCard.tsx`:**
-- `transmission` toevoegen aan de `MotorhomeCardProps` interface
-- Een nieuw spec-item tonen met een geschikt icoon (bijv. `Settings2` of `Cog`) naast jaar, brandstof, lengte en slaapplaatsen
+- **Regel in `serviceTypes` array:** "Verwarmingssystemen" wijzigen naar "Trekhaken & level systemen"
 
