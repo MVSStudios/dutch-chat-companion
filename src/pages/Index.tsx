@@ -125,7 +125,7 @@ Samen combineren we commerciële kracht met technische expertise - een unieke tr
               </p>
               <h3 className="mt-8 font-heading text-2xl font-bold text-foreground">Wat ons drijft?</h3>
               <p className="mt-4 font-body leading-relaxed text-muted-foreground">
-                De motorhome - markt blijft groeien, zowel bij jonge gezinnen als bij actieve senioren die opzoek zijn naar vrijheid en flexibiliteit.
+                De motorhome - markt blijft groeien, zowel bij jonge gezinnen als bij actieve senioren die op zoek zijn naar vrijheid en flexibiliteit.
               </p>
               <p className="mt-4 font-body leading-relaxed text-muted-foreground">
                 Tegelijk stijgt de vraag naar betaalbare en betrouwbare voertuigen, met duidelijke technische ondersteuning en eerlijke service. Wij zien hier een duidelijke kans om een laagdrempelige, klantgerichte kleinhandel uit te bouwen, waar kopers kunnen rekenen op eerlijk advies, transparante prijzen en professionele begeleiding
