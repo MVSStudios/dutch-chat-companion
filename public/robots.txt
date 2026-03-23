@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://nederlands-praten-makkelijk.lovable.app/sitemap.xml
+Sitemap: https://jc-motorhomes.be/sitemap.xml
