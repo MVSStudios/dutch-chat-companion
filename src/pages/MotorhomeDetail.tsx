@@ -110,11 +110,11 @@ const MotorhomeDetail = () => {
               )}
             </div>
 
-            {motorhome.price && (
-              <p className="mt-2 font-heading text-3xl font-bold text-primary">
-                €{motorhome.price.toLocaleString("nl-BE")}
-              </p>
-            )}
+            {motorhome.status !== "sold" && motorhome.price && (
+  <p className="mt-2 font-heading text-3xl font-bold text-primary">
+    €{motorhome.price.toLocaleString("nl-BE")}
+  </p>
+)}
 
             {specs.length > 0 && (
               <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
