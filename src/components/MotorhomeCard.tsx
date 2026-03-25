@@ -38,11 +38,15 @@ const MotorhomeCard = ({ id, title, price, year, fuel_type, length_m, sleeps, im
       </div>
       <CardContent className="p-5">
         <h3 className="font-heading text-lg font-semibold text-foreground line-clamp-1">{title}</h3>
-        {price && (
-          <p className="mt-1 font-heading text-xl font-bold text-primary">
-            €{price.toLocaleString("nl-BE")}
-          </p>
-        )}
+        {status === "sold" ? (
+  <p className="mt-1 font-heading text-xl font-bold text-primary">
+    Verkocht
+  </p>
+) : price ? (
+  <p className="mt-1 font-heading text-xl font-bold text-primary">
+    €{price.toLocaleString("nl-BE")}
+  </p>
+) : null}
         <div className="mt-3 flex flex-wrap gap-3 text-sm text-muted-foreground">
           {year && (
             <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />{year}</span>
